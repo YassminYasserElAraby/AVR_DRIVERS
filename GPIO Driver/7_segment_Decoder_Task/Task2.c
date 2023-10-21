@@ -13,21 +13,28 @@ int main()
 {
 	unsigned char count = 0;
 
-	/*Set 7-segment as output bin 0 & 1 & 2 & 4 in PORTB*/
+	Eta32mini_SevenSegment_SetPinDirection();
+
+	/*//Set 7-segment as output bin 0 & 1 & 2 & 4 in PORTB//
 	DDRB  |= (0x17);
-	PORTB &= (~(0xE8));
+	PORTB &= (~(0xE8));*/
 
 	while(1)
 	{
-		if((PORTB & 0xE8) == 9)
+		if(count == 9)
 		{
 			count = 0;
 		}
 		else
 		{
-			count++;
+			for(count=0; count<=9; count++)
+			{
+				count++;
+				Decoder_SevenSegment_Display(count);
+				_delay_ms(1000);
+			}
 		}
-		PORTB = (PORTB & 0xE8) | (count & 0x17);
+
 	}
 }
 

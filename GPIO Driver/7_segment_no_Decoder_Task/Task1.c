@@ -111,6 +111,7 @@ int main()
 {
 	unsigned char i = 0;
 
+	Eta32mini_SevenSegment_SetPinDirection();
 	/*Set 7-segment as output bin 0 & 1 & 2 & 4 in PORTB*/
 	/*DDRB |= (0x17);
 	PORTB &= (~(0xE8));*/
