@@ -1,0 +1,106 @@
+/************************************************************************************************************
+ * File Name : DRV_Interface.h
+ *
+ * Data : 8 / 6 / 2023
+ *
+ * Description: Commonly used Macros
+ *
+ * Author : Yassmin Yasser El-Araby
+ ************************************************************************************************************/
+#include "std_types.h"
+
+#ifndef DRV_INTERFACE_H_
+#define DRV_INTERFACE_H_
+
+/************************************************************************************************************
+ *                                                                                                          *
+ *                                  Commonly used Macros                                                    *
+ *                                                                                                          *
+ ************************************************************************************************************/
+/* Set a certain bit in any register */
+#define SET_BIT(REG,BIT_NUM)    (REG |= (1<<BIT_NUM))
+
+/* Clear a certain bit in any register */
+#define CLEAR_BIT(REG,BIT_NUM)  (REG &= (~(1<<BIT_NUM)))
+
+/*Toggle a certain bit in any register */
+#define TOGGLE_BIT(REG,BIT_NUM) (REG ^= (1<<BIT_NUM))
+
+/* Get a certain bit in any register */
+#define GIT_BIT(REG,BIT_NUM)    ((REG>>BIT)&1)
+
+/* Set a certain byte in register */
+#define SET_BYTE(REG,VAL)       (REG = VAL)
+
+/* Set a certain bit in any register */
+#define CONC_BYTE(b7,b6,b5,b4,b3,b2,b1,b0) 0b##b7##b6##b5##b4##b3##b2##b1##b0
+
+/* Mask a certain bit in any register */
+#define MASK_BIT(REG,MASK_VAL)  (REG &= MASK_VAL)
+
+/* Check if a specific bit is set in any register and return true if yes */
+#define BIT_IS_SET(REG,BIT) ( REG & (1<<BIT) )
+
+/* Check if a specific bit is cleared in any register and return true if yes */
+#define BIT_IS_CLEAR(REG,BIT) ( !(REG & (1<<BIT)) )
+
+
+/************************************************************************************************************
+ *                                                                                                          *
+ *                                  Function Prototypes                                                     *
+ *                                                                                                          *
+ ************************************************************************************************************/
+
+/*
+ * Description :
+ * Setup the direction of the required pin input/output.
+ * If the input port number or pin number are not correct, The function will not handle the request.
+ */
+void GPIO_SetupPinDirection(uint8 port_num, uint8 pin_num, GPIO_PinDirectionType direction);
+
+/*
+ * Description
+ * Write the value Logic High or Logic Low on the required pin.
+ * If the input port number or pin number are not correct, the function will not handle the request
+ * If the input port number or pin number are not correct, The function will return Logic Low.
+ */
+void GPIO_SetupPinValue(uint8 port_num, uint8 pin_num, uint8 value);
+
+/*
+ * Description :
+ * Read and return the value for the required pin, it should be Logic High or Logic Low.
+ * If the input port number or pin number are not correct, The function will return Logic Low.
+ */
+uint8 GPIO_GetPinValue(uint8 port_num, uint8 pin_num);
+
+/*
+ * Description :
+ * Toggle the value for the required pin, it should be Logic High or Logic Low.
+ * If the input port number or pin number are not correct, The function will return Logic Low.
+ */
+void GPIO_TogglePinValue(uint8 port_num, uint8 pin_num);
+
+/*
+ *
+ * Description
+ * Setup the direction of the required port input/output
+ * If the input port number are not correct, the function will not handle the request
+ */
+void GPIO_SetupPortDirection(uint8 port_num, GPIO_PortDirectionType Direction);
+
+/*
+ * Description
+ * Write the value Logic High or Logic Low on the required port.
+ * If the input port number are not correct, the function will not handle the request
+ * If the input port number are not correct, The function will return Logic Low.
+ */
+void GPIO_SetupPortValue(uint8 port_num, uint8 value);
+
+/*
+ * Description :
+ * Read and return the value for the required port, it should be Logic High or Logic Low.
+ * If the input port number are not correct, The function will return Logic Low.
+ */
+uint8 GPIO_GetPortValue(uint8 port_num);
+
+#endif /* DRV_INTERFACE_H_ */

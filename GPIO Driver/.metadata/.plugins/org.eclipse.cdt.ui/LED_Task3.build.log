@@ -1,0 +1,41 @@
+23:10:35 **** Incremental Build of configuration Debug for project LED_Task3 ****
+make all 
+Building file: ../Led.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Led.d" -MT"Led.o" -c -o "Led.o" "../Led.c"
+Finished building: ../Led.c
+ 
+Building file: ../task3.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"task3.d" -MT"task3.o" -c -o "task3.o" "../task3.c"
+In file included from ../task3.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../task3.c
+ 
+Building target: LED_Task3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LED_Task3.map -mmcu=atmega16 -o "LED_Task3.elf"  ./DRV_Program.o ./Led.o ./task3.o   
+Finished building target: LED_Task3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LED_Task3.elf  >"LED_Task3.lss"
+Finished building: LED_Task3.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 LED_Task3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    7388 bytes (45.1% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:10:35 Build Finished. 0 errors, 1 warnings. (took 667ms)
+

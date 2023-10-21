@@ -1,0 +1,28 @@
+23:20:05 **** Incremental Build of configuration Debug for project LED_Task ****
+make all 
+Building file: ../task3.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"task3.d" -MT"task3.o" -c -o "task3.o" "../task3.c"
+In file included from ../task3.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../task3.c:11:
+../Led.h:22: error: expected ')' before 'port_num'
+../Led.h:28: error: expected ')' before 'port_num'
+../Led.h:34: error: expected ')' before 'port_num'
+../task3.c: In function 'main':
+../task3.c:19: warning: implicit declaration of function 'Init_Led'
+../task3.c:19: error: 'PORTB_ID' undeclared (first use in this function)
+../task3.c:19: error: (Each undeclared identifier is reported only once
+../task3.c:19: error: for each function it appears in.)
+../task3.c:19: error: 'PIN7_ID' undeclared (first use in this function)
+../task3.c:24: warning: implicit declaration of function 'Setup_LED_ON'
+../task3.c:26: warning: implicit declaration of function 'Setup_LED_OFF'
+../task3.c:30: error: 'PORTA_ID' undeclared (first use in this function)
+../task3.c:30: error: 'PIN4_ID' undeclared (first use in this function)
+../task3.c:36: error: 'PIN5_ID' undeclared (first use in this function)
+../task3.c:42: error: 'PIN6_ID' undeclared (first use in this function)
+make: *** [task3.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+23:20:05 Build Failed. 10 errors, 4 warnings. (took 206ms)
+

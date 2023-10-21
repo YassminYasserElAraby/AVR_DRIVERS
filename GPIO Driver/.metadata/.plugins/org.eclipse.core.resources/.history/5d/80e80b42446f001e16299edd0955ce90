@@ -1,0 +1,16 @@
+/*
+ * Task1.c
+ *
+ *  Created on: Oct 20, 2023
+ *      Author: SCH
+ */
+
+
+#include "stdio.h"
+#include "avr/io.h" /* To use the IO Ports Registers */
+
+int main()
+{
+	DDRB |= (0x0F);     //Configure first four pins in PORTB as output pins
+
+}

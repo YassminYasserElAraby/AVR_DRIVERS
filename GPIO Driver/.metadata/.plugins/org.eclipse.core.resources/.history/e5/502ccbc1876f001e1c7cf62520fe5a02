@@ -1,0 +1,17 @@
+/*
+ * 7_segment_Decoder.c
+ *
+ *  Created on: Oct 20, 2023
+ *      Author:Yassmin Yasser El-Araby
+ *
+ */
+
+void Eta32mini_SevenSegment_SetPinDirection(void)
+{
+	GPIO_SetupPinDirection(PORTB_ID,PIN6_ID,PIN_OUTPUT);
+	GPIO_SetupPinDirection(PORTB_ID,PIN5_ID,PIN_OUTPUT);
+	GPIO_SetupPinDirection(PORTA_ID,PIN2_ID,PIN_OUTPUT);
+	GPIO_SetupPinDirection(PORTA_ID,PIN3_ID,PIN_OUTPUT);
+}
+
+

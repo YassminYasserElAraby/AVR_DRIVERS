@@ -1,0 +1,20 @@
+00:48:11 **** Incremental Build of configuration Debug for project Flash_LED ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Flash_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    7388 bytes (45.1% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+00:48:11 Build Finished. 0 errors, 0 warnings. (took 168ms)
+

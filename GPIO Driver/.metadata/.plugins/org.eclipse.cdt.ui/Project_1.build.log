@@ -1,0 +1,45 @@
+20:26:58 **** Incremental Build of configuration Debug for project Project_1 ****
+make all 
+Building file: ../DRV_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"DRV_Program.d" -MT"DRV_Program.o" -c -o "DRV_Program.o" "../DRV_Program.c"
+Finished building: ../DRV_Program.c
+ 
+Building file: ../Task1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"Task1.d" -MT"Task1.o" -c -o "Task1.o" "../Task1.c"
+In file included from ../Task1.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Task1.c
+ 
+Building target: Project_1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Project_1.map -mmcu=atmega32 -o "Project_1.elf"  ./DRV_Program.o ./Task1.o   
+Finished building target: Project_1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Project_1.elf  >"Project_1.lss"
+Finished building: Project_1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Project_1.elf  "Project_1.hex"
+Finished building: Project_1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Project_1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6770 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:27:01 Build Finished. 0 errors, 1 warnings. (took 2s.982ms)
+
